@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes spinSlow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spinSlow 20s linear infinite;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  header, footer, #scanner-modal-backdrop, button:not(.print-include) {
+    display: none !important;
+  }
+  #printable-room-badge, #printable-executive-report, #printable-qr-grid, #blueprint-container {
+    display: block !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border-color: #000 !important;
+    background: white !important;
+    color: black !important;
+  }
+}
+
